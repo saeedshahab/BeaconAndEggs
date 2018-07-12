@@ -5,57 +5,56 @@ const _ = require('lodash');
 // const Xpress = require('express');
 // var express = Xpress;
 
-
-
 module.exports = function(Promotion) {
   Promotion.getAllPromotions = (storeId, callback) => {
     app.models.Promotion.find({
       where: {
-        featured: true
+        featured: true,
       },
       include: [{
         relation: 'productLocation',
         scope: {
           where: {
-            storeId: storeId
+            storeId: storeId,
           },
           include: [{
-            relation: 'store'  
+            relation: 'store',
           }, {
-            relation: 'product'
-          }
-        ]
-        }
+            relation: 'product',
+          },
+          ],
+        },
       }, {
         relation: 'price',
         scope: {
-          fields: ['price', 'productLocationid']
-        }
-      }
-    ]
+          fields: ['price', 'productLocationid'],
+        },
+      },
+      ],
     }, (err, results) => {
       let response = [];
       if (!err) {
         async.forEach(results, (element, callback) => {
           element = element.toJSON();
-          let obj = {
-            store: element.productLocation.store.location,
-            product: {
-              name: element.productLocation.product.name,
-              gtin: element.productLocation.product.gtin   
-            },
-            price: {
-              oldPrice: element.price.price,
-              newPrice: element.newPrice
-            }
-          };
-          response.push(obj);
+          if (element.productLocation) {
+            let obj = {
+              store: element.productLocation.store.location,
+              product: {
+                name: element.productLocation.product.name,
+                gtin: element.productLocation.product.gtin
+              },
+              price: {
+                oldPrice: element.price.price,
+                newPrice: element.newPrice
+              }
+            };
+            response.push(obj);
+          }
           callback();
         }, (err) => {
           callback(err, response);
         });
       } else callback(err, response);
-    
     });
   };
 
@@ -64,25 +63,25 @@ module.exports = function(Promotion) {
     description: 'Returns all promotions in a store ',
     http: {
       path: '/getAllPromotions',
-      verb: 'get'
+      verb: 'get',
     },
     accepts: [
       {
         arg: 'storeId',
         type: 'string',
         http: {
-          source: 'query'
+          source: 'query',
         },
-        description: 'Id of the store'
-      }
+        description: 'Id of the store',
+      },
     ],
     returns: {
       http: {
-        status: 200
+        status: 200,
       },
       type: 'string',
-      root: false
-    }
+      root: false,
+    },
   });
 };
 
