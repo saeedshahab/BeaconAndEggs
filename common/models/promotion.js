@@ -34,34 +34,24 @@ module.exports = function(Promotion) {
       }
     ]
     }, (err, results) => {
-      let response = "<html><body>";
-      response += "<table border='1'>";
-      // let response = [];
+      let response = [];
       if (!err) {
         async.forEach(results, (element, callback) => {
-          element = JSON.parse(JSON.stringify(element));
-          response += "<tr>";
-          response += "<td>" + element.productLocation.store.location + "</td>";
-          response += "<td>" + element.productLocation.product.name + "</td>";
-          response += "<td>" + element.productLocation.product.gtin + "</td>";
-          response += "<td>" + element.price.price + "</td>";
-          response += "<td>" + element.newPrice + "</td>";
-          response += "</tr>";
-          // let obj = {
-          //   store: element.productLocation.store.location,
-          //   product: {
-          //     name: element.productLocation.product.name,
-          //     gtin: element.productLocation.product.gtin   
-          //   },
-          //   price: {
-          //     oldPrice: element.price.price,
-          //     newPrice: element.newPrice
-          //   }
-          // };
-          // response.push(obj);
+          element = element.toJSON();
+          let obj = {
+            store: element.productLocation.store.location,
+            product: {
+              name: element.productLocation.product.name,
+              gtin: element.productLocation.product.gtin   
+            },
+            price: {
+              oldPrice: element.price.price,
+              newPrice: element.newPrice
+            }
+          };
+          response.push(obj);
           callback();
         }, (err) => {
-          response += "</table></body></html>"
           callback(err, response);
         });
       } else callback(err, response);
@@ -91,7 +81,7 @@ module.exports = function(Promotion) {
         status: 200
       },
       type: 'string',
-      root: true
+      root: false
     }
   });
 };
