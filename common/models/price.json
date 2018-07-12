@@ -1,0 +1,28 @@
+{
+  "name": "Price",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "productLocationId": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "productLocation" : {
+      "type": "belongsTo",
+      "model": "ProductLocation",
+      "foreignKey": "productLocationId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

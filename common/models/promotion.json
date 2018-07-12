@@ -1,0 +1,37 @@
+{
+  "name": "Promotion",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "productLocationId": {
+      "type": "string",
+      "required": true
+    },
+    "priceId": {
+      "type": "string",
+      "required": true
+    },
+    "newPrice": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "productLocation" : {
+      "type": "belongsTo",
+      "model": "ProductLocation",
+      "foreignKey": "productLocationId"
+    },
+    "price" : {
+      "type": "belongsTo",
+      "model": "Price",
+      "foreignKey": "priceId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
