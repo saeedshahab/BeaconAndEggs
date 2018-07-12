@@ -10,7 +10,7 @@ module.exports = (server) => {
         location: 'Liverpool',
         type: 'Extra',
       }, {
-        location: 'Mannchester',
+        location: 'Manchester',
         type: 'Extra',
       }], (err, res) => {
         callback(err);
