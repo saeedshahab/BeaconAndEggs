@@ -1,7 +1,7 @@
 angular
 .module('beaconandeggs')
-.controller('PromotionController', ['$scope', '$stateParams', 'Promotion', function($scope, $stateParams, Promotion) {
-  Promotion.getAllPromotions({storeId: $stateParams.storeId}).$promise.then(function(results) {
+.controller('PromotionController', ['$scope', '$location', 'Promotion', function($scope, $location, Promotion) {
+  Promotion.getAllPromotions({storeId: $location.search().storeId}).$promise.then(function(results) {
     $scope.result = results;
-  })
+  });
 }]);

@@ -1,11 +1,12 @@
 angular
 .module('beaconandeggs', ['ui.router', 'lbServices'])
-.config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', ($stateProvider, $urlRouterProvider, $locationProvider) => {
   $stateProvider
   .state('promotions', {
-    url: '/?storeId',
+    url: '/',
     templateUrl: 'views/promotions.html',
     controller: 'PromotionController'
   });
   $urlRouterProvider.otherwise('/');
+  $locationProvider.html5Mode({ enabled: true, requireBase: false });
 }]);
