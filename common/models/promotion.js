@@ -2,8 +2,6 @@
 const async = require('async');
 const app = require('../../server/server');
 const _ = require('lodash');
-// const Xpress = require('express');
-// var express = Xpress;
 
 module.exports = function(Promotion) {
   Promotion.getAllPromotions = (storeId, callback) => {
@@ -41,12 +39,12 @@ module.exports = function(Promotion) {
               store: element.productLocation.store.location,
               product: {
                 name: element.productLocation.product.name,
-                gtin: element.productLocation.product.gtin
+                gtin: element.productLocation.product.gtin,
               },
               price: {
                 oldPrice: element.price.price,
-                newPrice: element.newPrice
-              }
+                newPrice: element.newPrice,
+              },
             };
             response.push(obj);
           }
