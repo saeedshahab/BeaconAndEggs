@@ -17,6 +17,10 @@
     "newPrice": {
       "type": "string",
       "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
     }
   },
   "validations": [],
