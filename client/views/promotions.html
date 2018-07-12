@@ -1,0 +1,16 @@
+<table class="table">
+  <tr>
+    <th>Store</th>
+    <th>Product name</th>
+    <th>GTIN</th>
+    <th>Old price</th>
+    <th>Current price</th>
+  </tr>
+  <tr ng-repeat="row in result.undefined">
+    <td>{{row.store}}</td>
+    <td>{{row.product.name}}</td>
+    <td>{{row.product.gtin}}</td>
+    <td><strike>{{row.price.oldPrice}}</strike></td>
+    <td>{{row.price.newPrice}}</td>
+  </tr>
+</table>
