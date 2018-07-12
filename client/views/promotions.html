@@ -1,16 +1,17 @@
-<table class="table">
-  <tr>
-    <th>Store</th>
-    <th>Product name</th>
-    <th>GTIN</th>
-    <th>Old price</th>
-    <th>Current price</th>
-  </tr>
-  <tr ng-repeat="row in result.undefined">
-    <td>{{row.store}}</td>
-    <td>{{row.product.name}}</td>
-    <td>{{row.product.gtin}}</td>
-    <td><strike>{{row.price.oldPrice}}</strike></td>
-    <td>{{row.price.newPrice}}</td>
-  </tr>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" ng-repeat="row in result.undefined">
+      <div class="card mb-4" style="width: 18rem;">
+        <div class="card-header">
+          {{row.store}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{row.product.name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{row.product.gtin}}</h6>
+          <span class="card-title h5"><strike>{{row.price.oldPrice}}</strike></span>
+          <span class="card-title h3 ml-2">{{row.price.newPrice}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
