@@ -19,10 +19,13 @@
       <div class="container collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" ui-sref="promotions">Promotions</a>
+            <a class="nav-link" ui-sref="promotions({storeId: storeId})">Promotions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" ui-sref="camera">Augmented Reality</a>
+            <a class="nav-link" ui-sref="layout({storeId: storeId})">Store Layout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="camera({storeId: storeId})">Augmented Store</a>
           </li>
         </ul>
       </div>
@@ -42,6 +45,7 @@
     <script src="js/app.js"></script>
     <script src="js/controllers/promotions.js"></script>    
     <script src="js/controllers/camera.js"></script>    
+    <script src="js/controllers/layout.js"></script>    
     
  
   </body>
