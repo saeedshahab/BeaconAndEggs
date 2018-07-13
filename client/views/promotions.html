@@ -8,9 +8,9 @@
         <div class="card-body">
           <h5 class="card-title">{{row.product.name}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{row.product.gtin}}</h6>
-          <span class="card-title h5"><strike>${{row.price.oldPrice}}</strike></span>
-          <span class="card-title h3 ml-2">${{row.price.newPrice}}</span>
-          <div class="card-title h2 ml-2 ml-auto">{{((row.price.oldPrice - row.price.newPrice) / (row.price.oldPrice)) * 100 | number: 0}}%</div>
+          <span class="card-title h5"><strike>£{{row.price.oldPrice}}</strike></span>
+          <span class="card-title h3 ml-2">£{{row.price.newPrice}}</span>
+          <div class="card-title h2 ml-2 ml-auto">{{((row.price.oldPrice - row.price.newPrice) / (row.price.oldPrice)) * 100 | number: 0}}% off</div>
         </div>
       </div>
     </div>
