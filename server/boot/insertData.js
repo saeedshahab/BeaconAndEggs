@@ -92,49 +92,49 @@ module.exports = (server) => {
     }, (callback) => {
       server.models.Price.create([{
         productLocationId: '1',
-        price: '$12',
+        price: '12',
       }, {
         productLocationId: '2',
-        price: '$14',
+        price: '14',
       }, {
         productLocationId: '3',
-        price: '$16',
+        price: '16',
       }, {
         productLocationId: '4',
-        price: '$12',
+        price: '12',
       }, {
         productLocationId: '5',
-        price: '$14',
+        price: '14',
       }, {
         productLocationId: '6',
-        price: '$16',
+        price: '16',
       }, {
         productLocationId: '7',
-        price: '$12',
+        price: '12',
       }, {
         productLocationId: '8',
-        price: '$14',
+        price: '14',
       }, {
         productLocationId: '9',
-        price: '$16',
+        price: '16',
       }, {
         productLocationId: '10',
-        price: '$12',
+        price: '12',
       }, {
         productLocationId: '11',
-        price: '$14',
+        price: '14',
       }, {
         productLocationId: '12',
-        price: '$16',
+        price: '16',
       }, {
         productLocationId: '13',
-        price: '$12',
+        price: '12',
       }, {
         productLocationId: '14',
-        price: '$14',
+        price: '14',
       }, {
         productLocationId: '15',
-        price: '$16',
+        price: '16',
       }], (err, res) => {
         callback(err);
       });
@@ -142,42 +142,42 @@ module.exports = (server) => {
       server.models.Promotion.create([{
         productLocationId: '1',
         priceId: '1',
-        newPrice: '$8',
+        newPrice: '8',
         featured: true,
       }, {
         productLocationId: '2',
         priceId: '2',
-        newPrice: '$9',
+        newPrice: '9',
         featured: true,
       }, {
         productLocationId: '8',
         priceId: '8',
-        newPrice: '$10',
+        newPrice: '10',
         featured: true,
       }, {
         productLocationId: '9',
         priceId: '9',
-        newPrice: '$10',
+        newPrice: '10',
         featured: true,
       }, {
         productLocationId: '12',
         priceId: '12',
-        newPrice: '$8',
+        newPrice: '8',
         featured: true,
       }, {
         productLocationId: '13',
         priceId: '13',
-        newPrice: '$9',
+        newPrice: '9',
         featured: true,
       }, {
         productLocationId: '4',
         priceId: '4',
-        newPrice: '$8',
+        newPrice: '8',
         featured: true,
       }, {
         productLocationId: '10',
         priceId: '10',
-        newPrice: '$9',
+        newPrice: '9',
         featured: true,
       }], (err, res) => {
         callback(err);
