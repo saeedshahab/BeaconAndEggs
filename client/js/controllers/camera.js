@@ -1,7 +1,6 @@
 angular
-.module('beaconandeggs')
-.controller('CameraController', ['$scope', '$stateParams', function($scope, $stateParams) {
-  console.log($stateParams);
+.module('beacon-and-eggs')
+.controller('CameraController', ['$scope', function($scope) {
   $scope.channel = {
     // the fields below are all optional
     // videoHeight: 800,

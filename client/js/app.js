@@ -1,5 +1,5 @@
 angular
-.module('beaconandeggs', ['ui.router', 'lbServices', 'webcam'])
+.module('beacon-and-eggs', ['ui.router', 'lbServices', 'webcam'])
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', ($stateProvider, $urlRouterProvider, $locationProvider) => {
   $stateProvider
   .state('promotions', {

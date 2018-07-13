@@ -1,5 +1,7 @@
 angular
-.module('beaconandeggs')
-.controller('LayoutController', ['$scope', '$stateParams', function($scope, $stateParams) {
-  console.log($stateParams);
+.module('beacon-and-eggs')
+.controller('LayoutController', ['$scope', '$stateParams', 'Store', function($scope, $stateParams, Store) {
+  Store.findById({id: $stateParams.storeId}).$promise.then(function(results) {
+    $scope.store = results;
+  });
 }]);
