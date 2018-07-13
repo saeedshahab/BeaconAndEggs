@@ -54,5 +54,9 @@
   "Promotion": {
     "dataSource": "db",
     "public": true
+  },
+  "Attachment": {
+    "dataSource": "storage",
+    "public": true
   }
 }

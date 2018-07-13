@@ -37,6 +37,8 @@ module.exports = function(Promotion) {
           if (element.productLocation) {
             let obj = {
               store: element.productLocation.store.location,
+              contact: element.productLocation.store.contact,
+              image: element.productLocation.store.imageName,
               product: {
                 name: element.productLocation.product.name,
                 gtin: element.productLocation.product.gtin,

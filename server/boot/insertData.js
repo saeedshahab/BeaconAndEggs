@@ -6,12 +6,18 @@ module.exports = (server) => {
       server.models.Store.create([{
         location: 'London',
         type: 'Extra',
+        contact: '+44 34567 19559',
+        imageName: 'London.jpg'
       }, {
         location: 'Liverpool',
         type: 'Extra',
+        contact: '+44 345 677 9002',
+        imageName: 'Liverpool.jpeg'
       }, {
         location: 'Manchester',
         type: 'Extra',
+        contact: '+44 345 671 9380',
+        imageName: 'Manchester.jpg'
       }], (err, res) => {
         callback(err);
       });
